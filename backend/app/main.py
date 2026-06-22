@@ -1,14 +1,15 @@
-"""FastAPI Application Entry Point"""
+"""Updated main application with new features"""
 
 from contextlib import asynccontextmanager
 import logging
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 
 from app.config import settings
 from app.api import router
+from app.api.v1 import auth, websocket
 from app.middleware.error_handler import error_exception_handler
 from app.utils.logger import setup_logging
 
@@ -22,6 +23,8 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("✅ Application starting up...")
     logger.info(f"DEBUG mode: {settings.DEBUG}")
+    logger.info(f"Database: {settings.MONGODB_URL}")
+    logger.info(f"Redis: {settings.REDIS_URL}")
     
     yield
     
@@ -60,6 +63,8 @@ async def validation_exception_handler(request, exc):
 
 # Include routers
 app.include_router(router.api_router, prefix="/api/v1")
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
+app.include_router(websocket.router, tags=["WebSocket"])
 
 
 @app.get("/")
@@ -70,6 +75,13 @@ async def root():
         "version": settings.APP_VERSION,
         "docs": "/docs",
         "openapi_schema": "/openapi.json",
+        "features": [
+            "User Authentication",
+            "Real-time Message Sync",
+            "WebSocket Notifications",
+            "Analytics Dashboard",
+            "Auto-reply Engine",
+        ],
     }
 
 
@@ -79,6 +91,7 @@ async def health_check():
     return {
         "status": "healthy",
         "version": settings.APP_VERSION,
+        "timestamp": str(logging.datetime.datetime.now()),
     }
 
 
