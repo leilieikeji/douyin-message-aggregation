@@ -1,0 +1,50 @@
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Database & ORM
+motor==3.3.1
+pydantic==2.4.2
+pydantic-settings==2.0.3
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+pyjwt==2.8.1
+
+# Redis & Caching
+redis==5.0.0
+
+# Async Tasks
+celery==5.3.3
+celery-beat==2.5.0
+
+# HTTP Client
+httpx==0.25.0
+requests==2.31.0
+
+# Data Processing
+pandas==2.1.0
+numpy==1.24.3
+
+# Logging & Monitoring
+python-json-logger==2.0.7
+aiofiles==23.2.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Development
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.10.0
+flake8==6.1.0
+isort==5.12.0
+pylint==3.0.2
+mypy==1.6.1
+
+# Environment
+python-dotenv==1.0.0
