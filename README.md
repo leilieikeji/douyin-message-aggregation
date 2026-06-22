@@ -9,7 +9,7 @@
 - **智能分类**：自动分类和标签管理
 - **数据分析**：消息统计、趋势分析
 - **自动回复**：支持模板和关键词回复
-- **导出功能**：支持多种格式导出
+- **数据导出**：支持多种格式导出
 - **用户友好的UI**：现代化的网页后台管理界面
 
 ## 📦 技术栈
@@ -53,7 +53,7 @@ sleep 10  # 等待服务启动
 
 # 4. 访问应用
 # 前端：http://localhost:3000
-# API 文档：http://localhost:8000/docs
+# API文档：http://localhost:8000/docs
 # 健康检查：http://localhost:8000/health
 ```
 
@@ -64,7 +64,7 @@ sleep 10  # 等待服务启动
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\\Scripts\\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
 uvicorn app.main:app --reload
@@ -79,7 +79,7 @@ cp .env.example .env
 npm start
 ```
 
-## 📋 API 文档
+## 📚 API 文档
 
 启动后端服务后，访问 `http://localhost:8000/docs` 查看完整的 Swagger API 文档。
 
@@ -119,8 +119,6 @@ npm start
 | Redis | 6379 | 缓存 |
 | Backend | 8000 | 后端 API |
 | Frontend | 3000 | 前端应用 |
-| Celery Worker | - | 异步任务处理 |
-| Celery Beat | - | 定时任务调度 |
 
 ## 📁 项目结构
 
