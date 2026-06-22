@@ -1,4 +1,4 @@
-import { Layout, Menu, Space, Button, Dropdown, Card, Row, Col, Statistic, Table, Empty } from 'antd';
+import { Layout, Menu, Space, Button, Dropdown, Card, Row, Col, Statistic, Empty } from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
