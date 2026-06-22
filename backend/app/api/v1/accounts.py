@@ -1,6 +1,6 @@
 """Accounts API endpoints"""
 
-from fastapi import APIRouter, HTTPException, Depends, Query
+from fastapi import APIRouter, HTTPException, Query
 from typing import List
 
 router = APIRouter()

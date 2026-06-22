@@ -1,7 +1,6 @@
 """Analytics API endpoints"""
 
 from fastapi import APIRouter
-from datetime import datetime, timedelta
 
 router = APIRouter()
 

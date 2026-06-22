@@ -30,7 +30,7 @@ def setup_logging():
                 "level": settings.LOG_LEVEL,
                 "formatter": "detailed",
                 "filename": "logs/app.log",
-                "maxBytes": 10485760,  # 10MB
+                "maxBytes": 10485760,
                 "backupCount": 10,
             },
         },

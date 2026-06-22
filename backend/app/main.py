@@ -20,13 +20,13 @@ logger = setup_logging()
 async def lifespan(app: FastAPI):
     """Lifespan context manager for startup and shutdown events"""
     # Startup
-    logger.info("\u2705 Application starting up...")
+    logger.info("✅ Application starting up...")
     logger.info(f"DEBUG mode: {settings.DEBUG}")
     
     yield
     
     # Shutdown
-    logger.info("\ud83d\udeab Application shutting down...")
+    logger.info("🛑 Application shutting down...")
 
 
 app = FastAPI(
